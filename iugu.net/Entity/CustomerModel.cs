@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace iugu.net.Entity
 {
@@ -23,5 +24,20 @@ namespace iugu.net.Entity
         public int number { get; set; }        
         public string complement { get; set; }        
         public string cpf_cnpj { get; set; }
+
+        [JsonProperty("zip_code")]
+        public string ZipCode { get; set; }
+
+        [JsonProperty("street")]
+        public string Street { get; set; }
+
+        [JsonProperty("city")]
+        public string City { get; set; }
+
+        [JsonProperty("state")]
+        public string State { get; set; }
+
+        [JsonProperty("district")]
+        public string Neighborhood { get; set; }
     }
 }

@@ -38,7 +38,7 @@ namespace iugu.net.Lib
     {
         private readonly IHttpClientWrapper client;
         private readonly JsonSerializerSettings JsonSettings;
-        private readonly string _version;
+        //private readonly string _version;
         private readonly string _endpoint;
         private readonly string _apiVersion;
         private readonly string _apiKey;
@@ -57,7 +57,7 @@ namespace iugu.net.Lib
         {
             client = customClient;
             JsonSettings = customJsonSerializerSettings ?? new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
-            _version = "1.0.5";
+            //_version = "1.0.5";
             _apiVersion = "v1";
             _endpoint = "https://api.iugu.com";
             _apiKey = IuguClient.Properties.ApiKey;

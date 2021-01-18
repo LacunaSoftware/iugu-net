@@ -21,6 +21,8 @@ namespace iugu.net.Entity
         public int total_cents { get; set; }
         public string total_paid { get; set; }
         public int total_paid_cents { get; set; }
+        public int taxes_paid_cents { get; set; }
+        public int overpaid_cents { get; set; }
         public object paid_at { get; set; }
         public int? paid_cents { get; set; }
         public string paid { get; set; }
@@ -46,6 +48,15 @@ namespace iugu.net.Entity
         public string commission_cents { get; set; }
         public string customer_ref { get; set; }
         public string customer_name { get; set; }
+
+        [JsonProperty("payment_method")]
+        public string PaymentMethod { get; set; }
+
+        [JsonProperty("pix")]
+        public Pix Pix { get; set; }
+
+        [JsonIgnore]
+        public string BankSlipPdf => $"{secure_url}.pdf";
     }
 
     // TODO: Precisa de refatoração, nomes fora do padrão .Net, sem documentação também
@@ -54,6 +65,30 @@ namespace iugu.net.Entity
         public string digitable_line { get; set; }
         public string barcode_data { get; set; }
         public string barcode { get; set; }
+
+        [JsonProperty("bank_slip_bank")]
+        public int BankCode { get; set; }
+
+        [JsonProperty("bank_slip_status")]
+        public string Status { get; set; }
+
+        [JsonProperty("bank_slip_error_code")]
+        public string ErrorCode { get; set; }
+
+        [JsonProperty("bank_slip_error_message")]
+        public string ErrorMessage { get; set; }
+    }
+
+    public class Pix
+    {
+        [JsonProperty("qrcode")]
+        public string QrCode { get; set; }
+
+        [JsonProperty("qrcode_text")]
+        public string QrCodeText { get; set; }
+
+        [JsonProperty("status")]
+        public string Status { get; set; }
     }
 
     // TODO: Precisa de refatoração, nomes fora do padrão .Net, sem documentação também

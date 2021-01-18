@@ -70,5 +70,11 @@ namespace iugu.net.Request
         [JsonProperty("payer")]
         public PayerModel PayerCustomer { get; set; }
 
+        /// <summary>
+        /// Número único que identifica o pedido de compra. Opcional, ajuda a evitar o pagamento da mesma fatura
+        /// </summary>
+        [JsonProperty("order_id")]
+        public string OrderId { get; set; }
+
     }
 }

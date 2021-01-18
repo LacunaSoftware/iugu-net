@@ -38,6 +38,18 @@ namespace iugu.net.Response
         /// </summary>
         [JsonProperty("message")]
         public string Message { get; set; }
+
+        /// <summary>
+        /// Url do PDF da fatura paga
+        /// </summary>
+        [JsonProperty("pdf")]
+        public string PdfUrl { get; set; }
+
+        /// <summary>
+        /// Código LR resultado da cobrança
+        /// </summary>
+        [JsonProperty("LR")]
+        public string LrCode { get; set; }
     }
 
 }
