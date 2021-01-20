@@ -108,6 +108,12 @@ namespace iugu.net.Request
         public string PaymentMethod { get; set; }
 
         /// <summary>
+        /// Número único que identifica o pedido de compra. Opcional, ajuda a evitar o pagamento da mesma fatura.
+        /// </summary>
+        [JsonProperty("order_id")]
+        public string OrderId { get; set; }
+
+        /// <summary>
         /// (opcional) Caso tenha o subscription_id, pode-se enviar o número de créditos a adicionar nessa Assinatura quando a Fatura for paga
         /// </summary>
         [JsonProperty("credits")]

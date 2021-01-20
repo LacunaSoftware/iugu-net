@@ -8,7 +8,7 @@
     <Copyright>Copyright (c) 2018, IUGU</Copyright>
     <Company>IUGU</Company>
     <Product>Iugu.Net</Product>
-    <Version>2.0.0-beta02</Version>
+    <Version>2.0.0-beta03</Version>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
     <Description>Cliente .Net para a API da IUGU</Description>
