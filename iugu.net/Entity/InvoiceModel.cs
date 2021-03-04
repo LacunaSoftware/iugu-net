@@ -26,6 +26,8 @@ namespace iugu.net.Entity
         public object paid_at { get; set; }
         public int? paid_cents { get; set; }
         public string paid { get; set; }
+        public object refunded_at_iso { get; set; }
+        public int? refunded_cents { get; set; }
         public string secure_id { get; set; }
         public string secure_url { get; set; }
         public object customer_id { get; set; }
