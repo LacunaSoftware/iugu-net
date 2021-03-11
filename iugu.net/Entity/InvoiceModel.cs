@@ -37,7 +37,7 @@ namespace iugu.net.Entity
         public string taxes_paid { get; set; }
         public object interest { get; set; }
         public object discount { get; set; }
-        public DateTimeOffset created_at { get; set; }
+        public DateTimeOffset created_at_iso { get; set; }
         public object refundable { get; set; }
         public object installments { get; set; }
         public BankSlip bank_slip { get; set; }
