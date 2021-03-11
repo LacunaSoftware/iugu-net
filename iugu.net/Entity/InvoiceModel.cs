@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace iugu.net.Entity
@@ -17,16 +18,16 @@ namespace iugu.net.Entity
         public object return_url { get; set; }
         public string status { get; set; }
         public object tax_cents { get; set; }
-        public string updated_at { get; set; }
+        public DateTimeOffset updated_at { get; set; }
         public int total_cents { get; set; }
         public string total_paid { get; set; }
         public int total_paid_cents { get; set; }
         public int taxes_paid_cents { get; set; }
         public int overpaid_cents { get; set; }
-        public object paid_at { get; set; }
+        public DateTimeOffset? paid_at { get; set; }
         public int? paid_cents { get; set; }
         public string paid { get; set; }
-        public object refunded_at_iso { get; set; }
+        public DateTimeOffset? refunded_at_iso { get; set; }
         public int? refunded_cents { get; set; }
         public string secure_id { get; set; }
         public string secure_url { get; set; }
@@ -36,7 +37,7 @@ namespace iugu.net.Entity
         public string taxes_paid { get; set; }
         public object interest { get; set; }
         public object discount { get; set; }
-        public string created_at { get; set; }
+        public DateTimeOffset created_at { get; set; }
         public object refundable { get; set; }
         public object installments { get; set; }
         public BankSlip bank_slip { get; set; }
