@@ -78,6 +78,11 @@ namespace iugu.net.Lib
         {
         }
 
+        public APIResource(HttpClient client) : this(new StandardHttpClient(client))
+        {
+
+        }
+
         public void Dispose()
         {
             client.Dispose();

@@ -1,5 +1,6 @@
 ﻿using iugu.net.Entity;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace iugu.net.Lib
@@ -10,6 +11,11 @@ namespace iugu.net.Lib
     public class Transfers : APIResource
     {
         public Transfers()
+        {
+            BaseURI = "/transfers";
+        }
+
+        public Transfers(HttpClient client) : base(client)
         {
             BaseURI = "/transfers";
         }

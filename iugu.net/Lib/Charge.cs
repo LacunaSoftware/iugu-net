@@ -1,6 +1,7 @@
 ﻿using iugu.net.Request;
 using iugu.net.Response;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace iugu.net.Lib
@@ -12,6 +13,11 @@ namespace iugu.net.Lib
     public class Charge : APIResource
     {
         public Charge()
+        {
+            BaseURI = "/charge";
+        }
+
+        public Charge(HttpClient client) : base(client)
         {
             BaseURI = "/charge";
         }

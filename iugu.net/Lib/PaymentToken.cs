@@ -2,6 +2,7 @@
 using iugu.net.Response;
 using Newtonsoft.Json;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace iugu.net.Lib
@@ -15,6 +16,11 @@ namespace iugu.net.Lib
     public class PaymentToken : APIResource
     {
         public PaymentToken()
+        {
+            BaseURI = "/payment_token";
+        }
+
+        public PaymentToken(HttpClient client) : base(client)
         {
             BaseURI = "/payment_token";
         }

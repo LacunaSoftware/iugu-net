@@ -3,6 +3,7 @@ using iugu.net.Request;
 using iugu.net.Response;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace iugu.net.Lib
@@ -10,6 +11,11 @@ namespace iugu.net.Lib
     public class Plans : APIResource
     {
         public Plans()
+        {
+            BaseURI = "/plans";
+        }
+
+        public Plans(HttpClient client) : base(client)
         {
             BaseURI = "/plans";
         }

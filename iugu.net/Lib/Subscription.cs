@@ -2,6 +2,7 @@
 using iugu.net.Request;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace iugu.net.Lib
@@ -9,6 +10,11 @@ namespace iugu.net.Lib
     public class Subscription : APIResource
     {
         public Subscription()
+        {
+            BaseURI = "/subscriptions";
+        }
+
+        public Subscription(HttpClient client) : base(client)
         {
             BaseURI = "/subscriptions";
         }

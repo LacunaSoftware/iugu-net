@@ -1,5 +1,6 @@
 ﻿using iugu.net.Entity;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace iugu.net.Lib
@@ -14,6 +15,11 @@ namespace iugu.net.Lib
             set { _customerID = value; }
         }
 
+        public PaymentMethod(string customerid, HttpClient client) : base(client)
+        {
+            _customerID = customerid;
+            BaseURI = string.Format("/customers/{0}/payment_methods", CustomerID);
+        }
 
         public PaymentMethod(string customerid)
         {

@@ -33,6 +33,11 @@ namespace iugu.net.Lib
                   .Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        public StandardHttpClient(HttpClient client)
+        {
+            this.client = client;
+        }
+
         /// <summary>
         /// Enviar uma requisição
         /// </summary>

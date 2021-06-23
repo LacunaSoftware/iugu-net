@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using iugu.net.Response;
 using iugu.net.Filters;
+using System.Net.Http;
 
 namespace iugu.net.Lib
 {
@@ -16,6 +17,11 @@ namespace iugu.net.Lib
     public class Customer : APIResource
     {
         public Customer()
+        {
+            BaseURI = "/customers";
+        }
+
+        public Customer(HttpClient client) : base(client)
         {
             BaseURI = "/customers";
         }
