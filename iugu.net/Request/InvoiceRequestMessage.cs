@@ -1,6 +1,7 @@
 ﻿using iugu.net.Entity;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace iugu.net.Request
 {
@@ -105,7 +106,7 @@ namespace iugu.net.Request
         /// caso esta esteja atribuído o valor ‘all’, o sistema considerará o payable_with da Fatura; se não, o sistema considerará o payable_with da Assinatura.
         /// </summary>
         [JsonProperty("payable_with")]
-        public string PaymentMethod { get; set; }
+        public List<string> PaymentMethods { get; set; }
 
         /// <summary>
         /// Número único que identifica o pedido de compra. Opcional, ajuda a evitar o pagamento da mesma fatura.
