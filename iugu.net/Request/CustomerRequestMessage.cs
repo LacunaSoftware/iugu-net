@@ -60,5 +60,16 @@ namespace iugu.net.Request
         [JsonProperty("complement")]
         public string Complement { get; set; }
 
+        /// <summary>
+        /// Rua. Obrigatório caso CEP seja incompleto.
+        /// </summary>
+        [JsonProperty("street")]
+        public string Street { get; set; }
+
+        /// <summary>
+        /// Bairro. Obrigatório caso CEP seja incompleto.
+        /// </summary>
+        [JsonProperty("district")]
+        public string Neighborhood { get; set; }
     }
 }
