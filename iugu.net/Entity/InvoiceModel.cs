@@ -47,7 +47,31 @@ namespace iugu.net.Entity
         public bool early_payment_discount { get; set; }
         public List<EarlyPaymentDiscounts> early_payment_discounts { get; set; }
         public List<Logs> logs { get; set; }
-        public string payable_with { get; set; }
+        public object payable_with { get; set; }
+
+        [JsonIgnore]
+        public string PayableWithString
+        {
+            get => PayableWithList == null ? payable_with.ToString() : null;
+
+        }
+
+        [JsonIgnore]
+        public List<string> PayableWithList
+        {
+            get
+            {
+                try
+                {
+                    return JsonConvert.DeserializeObject<List<string>>(payable_with?.ToString());
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
         public string commission_cents { get; set; }
         public string customer_ref { get; set; }
         public string customer_name { get; set; }

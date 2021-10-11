@@ -3,6 +3,7 @@ using iugu.net.Lib;
 using iugu.net.Request;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace iugu.net.IntegratedTests
@@ -23,7 +24,7 @@ namespace iugu.net.IntegratedTests
             {
                 var planRequest = new PlanRequestMessage($"{radomPlan}-12x", planId, 1, PlanIntervalType.Monthly, 0)
                 {
-                    PaymentMethod = Constants.PaymentMethod.BANK_SLIP
+                    PaymentMethods = new List<string> { Constants.PaymentMethod.BANK_SLIP }
                 };
 
                 var currentPlans = await apiPlan.GetAllAsync("74c265aedbfaea379bc0148fae9b5526").ConfigureAwait(false);
@@ -71,7 +72,7 @@ namespace iugu.net.IntegratedTests
             {
                 var planRequest = new PlanRequestMessage($"{radomPlan}-12x", planId, 1, PlanIntervalType.Monthly, 0)
                 {
-                    PaymentMethod = Constants.PaymentMethod.BANK_SLIP
+                    PaymentMethods = new List<string> { Constants.PaymentMethod.BANK_SLIP }
                 };
 
                 plan = await apiPlan.CreateAsync(planRequest, "74c265aedbfaea379bc0148fae9b5526").ConfigureAwait(false);

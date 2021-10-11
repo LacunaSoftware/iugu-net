@@ -238,7 +238,7 @@ namespace iugu.net.IntegratedTests
                     EnableLateFine = true,
                     LatePaymentFine = "2%",
                     EnableProportionalDailyTax = true,
-                    PaymentMethod = Constants.PaymentMethod.BANK_SLIP
+                    PaymentMethods = new List<string> { Constants.PaymentMethod.BANK_SLIP }
 
                 };
 

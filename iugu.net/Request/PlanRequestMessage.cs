@@ -49,7 +49,7 @@ namespace iugu.net.Request
         /// Método de pagamento que será disponibilizado para as Faturas pertencentes a Assinaturas deste Plano ('all', 'credit_card' ou 'bank_slip')
         /// </summary>
         [JsonProperty("payable_with")]
-        public string PaymentMethod { get; set; }
+        public List<string> PaymentMethods { get; set; }
 
         /// <summary>
         /// Preços do Plano
