@@ -83,7 +83,7 @@ namespace iugu.net.Entity
         public Pix Pix { get; set; }
 
         [JsonIgnore]
-        public string BankSlipPdf => bank_slip.BankSlipUrl;
+        public string BankSlipPdf => bank_slip.BankSlipPdfUrl;
     }
 
     // TODO: Precisa de refatoração, nomes fora do padrão .Net, sem documentação também
@@ -95,6 +95,9 @@ namespace iugu.net.Entity
 
         [JsonProperty("bank_slip_url")]
         public string BankSlipUrl { get; set; }
+
+        [JsonProperty("bank_slip_pdf_url")]
+        public string BankSlipPdfUrl { get; set; }
 
         [JsonProperty("bank_slip_bank")]
         public int BankCode { get; set; }
